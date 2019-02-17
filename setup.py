@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-    name='passwdparser',
+    name='passwd-parser',
     version='0.1.0',
     packages=['passwdparser'],
     entry_points={
