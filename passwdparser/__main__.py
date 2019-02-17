@@ -49,23 +49,27 @@ def main(args = None):
             tempDict[name]["full_name"] = pFields[4]
             tempDict[name]["groups"]    = []
             
-            grp = open( "{}".format(namespace.g), "r" )
+            try:
+                grp = open( "{}".format(namespace.g), "r" )
 
-            for line in grp:
-                gFields = line.split( ":" )
-                if gFields[3] != '\n':
-                    gUsers = gFields[3].rstrip().split( "," )
-                    for gUser in gUsers:
-                        if gUser == name:
-                            tempDict[name]["groups"].append(gFields[0])
-            grp.close()
+                for line in grp:
+                    gFields = line.split( ":" )
+                    if gFields[3] != '\n':
+                        gUsers = gFields[3].rstrip().split( "," )
+                        for gUser in gUsers:
+                            if gUser == name:
+                                tempDict[name]["groups"].append(gFields[0])
+                grp.close()
+
+            except FileNotFoundError as fnf_error:
+                print(fnf_error)
+
         pswd.close()
+
+        print(json.dumps(tempDict, indent = 4))
     
-    except:
-        print("File does not exist.")
-        parser.print_help()
-  
-    print(json.dumps(tempDict, indent = 4))
+    except FileNotFoundError as fnf_error:
+        print(fnf_error)
 
  
 # Entry point 
