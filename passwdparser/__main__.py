@@ -12,9 +12,9 @@ def createParser():
     parser = argparse.ArgumentParser(
         prog = '''passwd-parser''',
         description = '''passwd-parser 1.0 - (C) 2019 anleo6. Released under the MIT License. 
-			This utility parses the UNIX /etc/passwd and /etc/groups files 
-			and combines the data into a single json output. It is a toy 
-			treated as a real utility program that could be run in a cron job.''')
+			 This utility parses the UNIX /etc/passwd and /etc/groups files 
+			 and combines the data into a single json output. It is a toy 
+			 treated as a real utility program that could be run in a cron job.''')
 
     parser.add_argument ('-v', '--version', action ='version',
         help = 'show version of program',
@@ -44,7 +44,7 @@ def main(args = None):
             pFields = line.split( ":" )
             name = pFields[0]
 
-            tempDict[name]      		= collections.OrderedDict()
+            tempDict[name]      	= collections.OrderedDict()
             tempDict[name]["uid"]   	= pFields[2]
             tempDict[name]["full_name"] = pFields[4]
             tempDict[name]["groups"]    = []
