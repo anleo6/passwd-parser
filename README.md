@@ -3,7 +3,7 @@ This utility parses the UNIX /etc/passwd and /etc/group files and combines the d
 ## Getting Started
 The output is a json object where each key is a username and each value is an object containing the field “uid”, “full_name”, and “groups”. Groups contain a list of all groups the user is a member of.
 ### Prerequisites
-Be sure you have the latest python3 on your system. Also that your OS is any UNIX.
+Be sure you have the latest python3 on your UNIX-like system.
 ### Installing
 From source:
 ```sh
@@ -22,8 +22,7 @@ You can just run:
 ```sh
 $ passwd-parser
 ```
-and see the data from your local /etc/passwd and /etc/group (if they are exist!):
-
+and see the data from your local /etc/passwd and /etc/group files:
 ```sh
 $ passwd-parser
 {
@@ -49,8 +48,7 @@ $ passwd-parser
     }, ...,
 }
 ```
-If you want to parse other passwd and group files (for testing, as example) you can use -p for full path to passwd file and -g for group:
-
+If you want to parse other passwd and group files you can use -p and -g to enter custom paths:
 ```sh
 $ passwd-parser -p "~/passwd" -g "~/group"
 ```
