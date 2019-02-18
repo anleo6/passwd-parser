@@ -9,13 +9,13 @@ From source:
 ```sh
 $ git clone https://github.com/anleo6/passwd-parser.git && cd passwd-parser
 ```
-Use python3 for installation:
-```sh
-$ sudo python3 setup.py install
-```
-Or pip:
+Use pip:
 ```sh
 $ sudo pip3 install .
+```
+To uninstall:
+```sh
+$ sudo pip3 uninstall passwd-parser
 ```
 ### Usage
 You can just run:
