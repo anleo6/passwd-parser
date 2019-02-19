@@ -50,6 +50,15 @@ def main(args=None):
         for line in pswd:
             # Save the fields in list
             pFields = line.split(':')
+            
+            # Check file format
+            if len(pFields) == 7:
+                pass
+            else:
+                print("Wrong file format. Use -h for more information.")
+                pswd.close()
+                exit(1)
+
             name = pFields[0]
 
             # Use ordered dictionary to freeze the structure
@@ -63,6 +72,15 @@ def main(args=None):
 
                 for line in grp:
                     gFields = line.split(':')
+                    
+                    if len(gFields) == 4:
+                        pass
+                    else:
+                        print("Wrong file format. Use -h for more information.")
+                        pswd.close()
+                        grp.close()
+                        exit(1)
+
                     # Ignore empty fields
                     if gFields[3] != '\n':
                         gUsers = gFields[3].rstrip().split(',') 
