@@ -10,7 +10,7 @@ version = '0.1.0'
 
 
 def createParser():
-    """Return the object to parse the command line into Python data types."""
+    """Return the object to parse the command line."""
     parser = argparse.ArgumentParser(
         prog='''passwd-parser''',
         description='''passwd-parser 0.1.0 - (C) 2019 anleo6. 
@@ -40,7 +40,7 @@ def main(args=None):
     parser = createParser()
     namespace = parser.parse_args(sys.argv[1:])
 
-    # Create empty dictionary where the data will be keep
+    # Create empty dictionary to keep the data
     # before their migration to json format
     tempDict = {}
 
