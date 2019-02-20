@@ -48,10 +48,14 @@ def main(args=None):
         pswd = open('{}'.format(namespace.p), 'r')
 
         for line in pswd:
+            # Exclude comments
+            if line.startswith("#"):
+                continue
+
             # Save the fields in list
             pFields = line.split(':')
 
-            # Check file format
+            # Check format of line
             if len(pFields) == 7:
                 pass
             else:
@@ -72,8 +76,14 @@ def main(args=None):
                 grp = open('{}'.format(namespace.g), 'r')
 
                 for line in grp:
+                    # Exclude comments
+                    if line.startswith("#"):
+                        continue
+
+                    # Save the fields in list
                     gFields = line.split(':')
 
+                    # Check format of line
                     if len(gFields) == 4:
                         pass
                     else:
