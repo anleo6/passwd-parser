@@ -55,7 +55,8 @@ def main(args=None):
             if len(pFields) == 7:
                 pass
             else:
-                print("Error: Wrong file format.")
+                print("Error: Wrong format of line.")
+                print(pFields)
                 pswd.close()
                 exit(1)
 
@@ -76,7 +77,8 @@ def main(args=None):
                     if len(gFields) == 4:
                         pass
                     else:
-                        print("Error: Wrong file format. Use -h for more information.")
+                        print("Error: Wrong format of line.")
+                        print(gFields)
                         pswd.close()
                         grp.close()
                         exit(1)
