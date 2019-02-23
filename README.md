@@ -6,7 +6,7 @@ The output is a json object where each key is a username and each value is an ob
 Be sure you have the latest Python 3 on your UNIX-like system.
 ### Installing
 From source:
-```sh
+```
 $ git clone https://github.com/anleo6/passwd-parser.git && cd passwd-parser
 ```
 Use pip or pip3:
